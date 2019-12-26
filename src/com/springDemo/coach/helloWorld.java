@@ -8,7 +8,7 @@ public class helloWorld {
 		// TODO Auto-generated method stub
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Coach coach = context.getBean("myCoach", Coach.class);
-		System.out.println(coach.getData() + coach.getInjector());
+		System.out.println(coach.getData() + coach.getInjector1() + coach.getInjector2());
 		context.close();
 	}
 
