@@ -37,6 +37,14 @@ public class BasketBallCoach implements Coach {
 		return password;
 	}
 	
+	public void initStart() {
+		System.out.println("init");
+	}
+	
+	public void destroyEnd() {
+		System.out.println("destroyed");
+	}
+	
 	@Override
 	public String getInjector1() {
 		return this.injector1.getInjector();

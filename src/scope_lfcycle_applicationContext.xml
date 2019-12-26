@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+<!-- Define your beans here -->
+<context:property-placeholder location="classpath:system.properties"/>
+
+<!-- define the dependency -->
+<bean class="com.springDemo.coach.injector_1" id="injector1"></bean>
+<bean class="com.springDemo.coach.injector_2" id="injector2"/>
+
+<bean class="com.springDemo.coach.BasketBallCoach" id="myCoach" scope="prototype" 
+	init-method="initStart" destroy-method="destroyEnd"
+	>
+	<constructor-arg ref="injector1"></constructor-arg>
+	<property name="injectorTest" ref = "injector2"></property>
+	<property name="username" value="${username}"></property>
+	<property name="password" value="${password}"></property>
+</bean>
+
+<!--<bean id="myCoach"class="com.luv2code.springdemo.BaseballCoach"></bean> -->
+
+
+</beans>
